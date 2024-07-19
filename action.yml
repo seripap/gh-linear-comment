@@ -1,0 +1,18 @@
+name: 'GitHub Linear Comment'
+description: 'Leaves a comment on a linear.app issue through GH Actions'
+inputs:
+  linear-key:
+    description: 'Linear API Key'
+    required: true
+  linear-issue-id:
+    description: 'The Linear Issue ID (eg "ENG-1234")'
+    required: true
+  body:
+    description: 'The body of the comment, can be used as {{ github.event.issue.body }}'
+    required: true
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+branding:
+  icon: 'bell'
+  color: 'purple'
